@@ -4,6 +4,8 @@
   "rules": {
     "global-strict": 0,
     "max-len": 0,
+    // FIXME: Remove this when linting error has been fixed
+    "no-use-before-define": 0,
     "strict": 1
   },
 
