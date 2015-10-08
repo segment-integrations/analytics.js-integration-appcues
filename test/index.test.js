@@ -74,6 +74,18 @@ describe('Appcues', function() {
       analytics.page();
     });
 
+    describe('#page', function() {
+      beforeEach(function() {
+        analytics.stub(window.Appcues, 'start');
+      });
+
+      it('should proxy to Appcues.start()', function() {
+        analytics.didNotCall(window.Appcues.start);
+        analytics.page('Pricing');
+        analytics.called(window.Appcues.start);
+      });
+    });
+
     describe('#identify', function() {
       beforeEach(function() {
         analytics.stub(window.Appcues, 'identify');
