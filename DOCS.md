@@ -8,12 +8,40 @@ if you want to check it out.
 
 ## Getting Started
 
-To install Appcues via Segment, all you have to do is add your Appcues ID
-and API key
+To install Appcues via Segment, add your Appcues ID and API key
 (found on your [Appcues account page](https://my.appcues.com/account))
 to your Segment integrations dashboard.
 
-## API
+
+## JS and Server-side Integrations
+
+Appcues provides two Segment integrations.
+
+The first, our JavaScript integration with Segment's `analytics.js`,
+is the traditional way to use Appcues as part of the Segment platform.
+Calls to `analytics.identify` are used to indicate user properties,
+and `analytics.page` or `analytics.track` will send events to the
+Appcues API.
+
+Separately, Appcues offers a server-side integration with Segment,
+which is useful if you'd like to bring in user profile or event data
+from another Segment partner service.  The server-side integration
+may be used simultaneously with the JS integration.  In many cases,
+this is preferable to routing all data through the JS integration.
+
+The user profile and event data received through Appcues'
+server-side Segment integration can be used to segment
+and target Appcues flows, just like data received from the JS
+integration.
+
+For example, using the server-side integration, customer profile and
+event data could be directed from a CRM tool into the Appcues platform.
+This data could then be used for content targeting and user
+segmentation in the Appcues content editor, alongside data from
+our `analytics.js` integration.
+
+
+## JavaScript API
 
 ### Identify
 
@@ -45,29 +73,26 @@ the page changes. When you first call `page` using `analytics.js`,
 `Appcues.start` checks if there are any current flows for the user and
 loads them if necessary.
 
+
 ## Appcues Features
 
 ### Whitelisted Domains
 
-By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to /integrations, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your analytics.js script is installed on multiple domains (e.g. your marketing site and your web app), you’ll want to use Appcues whitelisted domains when targeting your experience.
+By default, Appcues will target based on the path of the URL. So if we
+created an Appcues experience and targeted it to `/integrations`,
+it would appear wherever the embed script is installed with that URL path,
+like appcues.com/integrations and my.appcues.com/integrations. If your
+analytics.js script is installed on multiple domains (e.g. your marketing
+site and your web app), you’ll want to use Appcues whitelisted domains when
+targeting your experience.
 
-### Sending Appcues events via Segment
+### Sending Appcues events to other Segment partner services
 
-Want to read Appcues events in your 3rd party analytics or marketing automation tool? Appcues supports sending events to other tools on the Segment platform. These events will be sent as track calls to the other integrations you’ve turned on.
+Want to read Appcues events in your 3rd party analytics or marketing
+automation tool? Appcues supports sending events to other tools on the
+Segment platform. These events will be sent as track calls to the other
+integrations you’ve turned on.
 
-To enable this feature, go to the Integrations Settings in Appcues and click “Activate” under the Segment integration.
-
-## Receiving external data via Segment
-
-Appcues can accept data from other Segment partners too, via our
-server-side integration.  This way, you can keep Appcues in sync with
-user properties and events without needing the data to originate from
-your website where Appcues is running.
-
-## Settings
-
-Segment lets you change these settings on the Integrations page, without having to touch any code.
-
-Appcues Id
-Appcues API key
+To enable this feature, go to the Integrations Settings in Appcues and
+click “Activate” under the Segment integration.
 
