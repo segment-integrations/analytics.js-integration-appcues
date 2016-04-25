@@ -24,10 +24,15 @@ and `analytics.page` or `analytics.track` will send events to the
 Appcues API.
 
 Separately, Appcues offers a server-side integration with Segment,
-which is useful if you'd like to bring in user profile or event data
-from another Segment partner service.  The server-side integration
-may be used simultaneously with the JS integration.  In many cases,
-this is preferable to routing all data through the JS integration.
+which is useful if you'd like to send user profile or event data to
+Appcues from another Segment partner service.  (Note that this is
+different from [Segment Sources](https://segment.com/sources), which
+allows you to bring multiple sources of Segment data together in your
+own data warehouse.)
+
+The server-side integration may be used simultaneously with the JS
+integration.  In many cases, this is preferable to routing all data
+through the JS integration.
 
 The user profile and event data received through Appcues'
 server-side Segment integration can be used to segment
@@ -91,7 +96,21 @@ targeting your experience.
 Want to read Appcues events in your 3rd party analytics or marketing
 automation tool? Appcues supports sending events to other tools on the
 Segment platform. These events will be sent as track calls to the other
-integrations you’ve turned on.
+integrations you’ve turned on.  A partial list of Appcues content
+lifecycle events that can be tracked:
+
+* `flow_shown`
+* `flow_skipped`
+* `flow_finished`
+* `flow_form_submission`
+* `form_field_submission`
+* `step_activated`
+* `hotspots_shown`
+* `hotspots_skipped`
+* `hotspots_completed`
+* `hotspot_activated`
+* `coachmarks_shown`
+* `coachmarks_completed`
 
 To enable this feature, go to the Integrations Settings in Appcues and
 click “Activate” under the Segment integration.
