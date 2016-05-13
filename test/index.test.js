@@ -10,7 +10,7 @@ describe('Appcues', function() {
   var appcues;
   var analytics;
   var options = {
-    appcuesId: '1663'
+    apiKey: '1663'
   };
 
   // Disable AMD for these browser tests.
@@ -40,7 +40,7 @@ describe('Appcues', function() {
     analytics.compare(Appcues, integration('Appcues')
       .assumesPageview()
       .global('Appcues')
-      .option('appcuesId', ''));
+      .option('apiKey', ''));
   });
 
   describe('before loading', function() {
