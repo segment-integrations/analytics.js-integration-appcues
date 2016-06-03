@@ -1,10 +1,10 @@
+'use strict';
 
 var Analytics = require('@segment/analytics.js-core').constructor;
 var integration = require('@segment/analytics.js-integration');
 var sandbox = require('@segment/clear-env');
 var tester = require('@segment/analytics.js-integration-tester');
-var plugin = require('../lib/');
-var Appcues = plugin.Integration;
+var Appcues = require('../lib/').Integration;
 
 describe('Appcues', function() {
   var appcues;
