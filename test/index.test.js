@@ -82,6 +82,10 @@ describe('Appcues', function() {
       it('should call Appcues.page', function() {
         analytics.page('some page', { someAttr: true });
         analytics.called(window.Appcues.page, 'some page');
+        // No way to assert an argument "match", and analytics.page includes
+        // other properties automatically, so manually checking the second
+        // arg to Appcues.page includes the `someAttr` value.
+        analytics.assert(window.Appcues.page.args[0][1].someAttr === true);
       });
     });
 
