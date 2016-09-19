@@ -1,3 +1,12 @@
+
+2.1.0 / 2016-09-19
+==================
+
+  * Test that attributes are passed into Appcues.page call.
+  * added our Segment integration documentation
+  * removed screen; made track, identify, and page simple passthroughs
+  * added `track` and `screen` handlers; updated handlers for new Appcues SDK
+
 2.0.0 / 2016-06-21
 ==================
 
