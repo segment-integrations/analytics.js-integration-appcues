@@ -38,7 +38,6 @@ describe('Appcues', function() {
 
   it('should have the right settings', function() {
     analytics.compare(Appcues, integration('Appcues')
-      .assumesPageview()
       .global('Appcues')
       .option('appcuesId', ''));
   });
@@ -55,7 +54,6 @@ describe('Appcues', function() {
     describe('#initialize', function() {
       it('should call #load', function() {
         analytics.initialize();
-        analytics.page();
         analytics.called(appcues.load);
       });
     });
@@ -71,7 +69,6 @@ describe('Appcues', function() {
     beforeEach(function(done) {
       analytics.once('ready', done);
       analytics.initialize();
-      analytics.page();
     });
 
     describe('#page', function() {
