@@ -1,4 +1,9 @@
 
+2.2.0 / 2016-10-06
+==================
+
+  * Appcues now accepts the initial Segment page call! 
+
 2.1.0 / 2016-09-19
 ==================
 
